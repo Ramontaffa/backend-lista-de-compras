@@ -1,0 +1,34 @@
+# docker-compose.yml
+
+services:
+  # Serviço da Aplicação (Express + Prisma)
+  app:
+    build: ./backend # Aponta para a pasta com o Dockerfile
+    ports:
+      - "3000:3000" # Mapeia porta: host -> container
+    volumes:
+      # Monta o código local no container para live-reload
+      # Exceto node_modules, que deve ser o do container
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      # URL do banco de DENTRO da rede Docker
+      # 'db' é o nome do serviço do banco abaixo
+      DATABASE_URL: "postgresql://postgres:minhasenha@db:5432/meubanco"
+    depends_on:
+      - db # Garante que o banco inicie antes do app
+
+  # Serviço do Banco de Dados (PostgreSQL)
+  db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: minhasenha
+      POSTGRES_DB: meubanco
+    ports:
+      - "6544:5432" # Mapeia porta: host -> container
+    volumes:
+      - postgres-data:/var/lib/postgresql/data # Persiste os dados
+
+volumes:
+  postgres-data: # Define o volume nomeado
