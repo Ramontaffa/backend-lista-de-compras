@@ -19,3 +19,19 @@ model User {
   email String  @unique
   name  String
 }
+
+model item {
+  id        Int      @id @default(autoincrement())
+  name      String
+  quantity  Int
+  category  Category
+  checked   Boolean? @default(false)
+}
+
+enum Category {
+  Bebida
+  Carne
+  Padaria
+  Legume
+  Fruta
+}
