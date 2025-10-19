@@ -1,6 +1,7 @@
 {
   "name": "backend-lista-de-compras",
   "version": "1.0.0",
+  "type": "module",
   "description": "API Backend para Lista de Compras",
   "main": "dist/index.js",
   "engines": {
