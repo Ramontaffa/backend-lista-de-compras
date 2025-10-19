@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://lista-de-compras-liart-iota.vercel.app/'
+    'https://lista-de-compras-liart-iota.vercel.app/',
+    'https://lista-de-compras-git-feat-integrated-main-ramontaffas-projects.vercel.app/'
   ]
 }));
 
