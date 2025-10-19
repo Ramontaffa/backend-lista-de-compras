@@ -2,10 +2,13 @@
   "name": "backend-lista-de-compras",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start:dev": "nodemon index.js"
-},
+    "dev": "ts-node-dev --respawn --transpile-only index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma:generate": "prisma generate"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,10 +16,16 @@
   "dependencies": {
     "@prisma/client": "^6.17.1",
     "express": "^5.1.0",
-    "pg": "^8.16.3"
+    "pg": "^8.16.3",
+    "zod": "4.1.12"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.8.1",
     "nodemon": "^3.1.10",
-    "prisma": "^6.17.1"
+    "prisma": "^6.17.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   }
 }
