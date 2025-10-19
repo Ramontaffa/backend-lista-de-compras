@@ -17,6 +17,7 @@ model item {
   id        Int      @id @default(autoincrement())
   name      String
   quantity  Int
+  unit      Unit
   category  Category
   checked   Boolean? @default(false)
 }
@@ -27,4 +28,11 @@ enum Category {
   Padaria
   Legume
   Fruta
+}
+
+enum Unit {
+  kg
+  l
+  ptc
+  un
 }

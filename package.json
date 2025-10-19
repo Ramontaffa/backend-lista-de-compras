@@ -21,7 +21,7 @@
     "express",
     "prisma"
   ],
-  "author": "",
+  "author": "Ramon Taffarel Guimarães",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^6.17.1",

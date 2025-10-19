@@ -15,6 +15,7 @@
 {
   "name": "Coca-Cola 2L",
   "quantity": 2,
+  "unit": "l",
   "category": "Bebida",
   "checked": false
 }
@@ -33,6 +34,7 @@
   "id": 1,
   "name": "Coca-Cola 2L",
   "quantity": 2,
+  "unit": "l",
   "category": "Bebida",
   "checked": false
 }
@@ -64,6 +66,7 @@ GET /items?checked=true
     "id": 1,
     "name": "Coca-Cola 2L",
     "quantity": 2,
+    "unit": "l",
     "category": "Bebida",
     "checked": false
   },
@@ -71,6 +74,7 @@ GET /items?checked=true
     "id": 2,
     "name": "Pão Francês",
     "quantity": 10,
+    "unit": "un",
     "category": "Padaria",
     "checked": true
   }
@@ -92,6 +96,7 @@ GET /items?checked=true
   "id": 1,
   "name": "Coca-Cola 2L",
   "quantity": 2,
+  "unit": "l",
   "category": "Bebida",
   "checked": false
 }
@@ -108,6 +113,7 @@ GET /items?checked=true
 {
   "name": "Coca-Cola Zero 2L",
   "quantity": 3,
+  "unit": "l",
   "category": "Bebida",
   "checked": true
 }
@@ -119,6 +125,7 @@ GET /items?checked=true
   "id": 1,
   "name": "Coca-Cola Zero 2L",
   "quantity": 3,
+  "unit": "l",
   "category": "Bebida",
   "checked": true
 }
@@ -141,6 +148,7 @@ Alterna o status `checked` do item (true ↔ false)
   "id": 1,
   "name": "Coca-Cola 2L",
   "quantity": 2,
+  "unit": "l",
   "category": "Bebida",
   "checked": true
 }
@@ -182,6 +190,7 @@ Alterna o status `checked` do item (true ↔ false)
 $body = @{
   name = "Banana"
   quantity = 6
+  unit = "un"
   category = "Fruta"
   checked = $false
 } | ConvertTo-Json
