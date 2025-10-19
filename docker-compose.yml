@@ -3,13 +3,13 @@
 services:
   # Serviço da Aplicação (Express + Prisma)
   app:
-    build: ./backend # Aponta para a pasta com o Dockerfile
+    build: . # Aponta para a raiz do projeto, onde está o Dockerfile
     ports:
       - "3000:3000" # Mapeia porta: host -> container
     volumes:
       # Monta o código local no container para live-reload
       # Exceto node_modules, que deve ser o do container
-      - ./backend:/usr/src/app
+      - ./:/usr/src/app
       - /usr/src/app/node_modules
     environment:
       # URL do banco de DENTRO da rede Docker

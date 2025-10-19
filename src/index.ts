@@ -1,6 +1,6 @@
 import express from 'express';
-import routes from './src/routes/index';
-import errorHandler from './src/middlewares/errorHandler';
+import routes from './routes/index';
+import errorHandler from './middlewares/errorHandler';
 
 const app = express();
 app.use(express.json());

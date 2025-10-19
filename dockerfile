@@ -9,8 +9,12 @@ RUN corepack enable
 # Defina o diretório de trabalho no container
 WORKDIR /usr/src/app
 
+
 # Copie os arquivos de manifesto de pacotes
 COPY package.json pnpm-lock.yaml ./
+
+# Copie a pasta prisma antes de instalar dependências (para o postinstall do Prisma funcionar)
+COPY prisma ./prisma
 
 # Instale dependências usando pnpm
 RUN pnpm install --frozen-lockfile
@@ -18,8 +22,6 @@ RUN pnpm install --frozen-lockfile
 # Copie o restante do código-fonte
 COPY . .
 
-# Gere o Prisma Client (essencial para o container)
-RUN pnpm prisma generate
 
 # Exponha a porta do Express
 EXPOSE 3000
