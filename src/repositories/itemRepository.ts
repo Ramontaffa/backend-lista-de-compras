@@ -1,5 +1,5 @@
 import prisma from '../database/prismaClient';
-import { item, Prisma, Category } from '../../generated/prisma';
+import { item, Prisma, Category } from '@prisma/client';
 
 class ItemRepository {
   // CRUD operations for 'item' entity

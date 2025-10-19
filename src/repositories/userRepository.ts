@@ -1,5 +1,5 @@
 import prisma from '../database/prismaClient';
-import { User, Prisma } from '../../generated/prisma';
+import { User, Prisma } from '@prisma/client';
 
 class UserRepository {
   async create(data: Prisma.UserCreateInput): Promise<User> {
