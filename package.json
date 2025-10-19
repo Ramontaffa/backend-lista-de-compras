@@ -1,31 +1,41 @@
 {
   "name": "backend-lista-de-compras",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Backend para Lista de Compras",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only index.ts",
-    "build": "tsc",
+    "build": "pnpm prisma:generate && tsc",
     "start": "node dist/index.js",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "postinstall": "prisma generate"
   },
-  "keywords": [],
+  "keywords": [
+    "shopping-list",
+    "api",
+    "typescript",
+    "express",
+    "prisma"
+  ],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@prisma/client": "^6.17.1",
     "express": "^5.1.0",
     "pg": "^8.16.3",
+    "prisma": "^6.17.1",
+    "typescript": "^5.9.3",
     "zod": "4.1.12"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.8.1",
     "nodemon": "^3.1.10",
-    "prisma": "^6.17.1",
     "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "ts-node-dev": "^2.0.0"
   }
 }
