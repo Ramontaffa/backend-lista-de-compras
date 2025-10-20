@@ -10,7 +10,8 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'https://lista-de-compras-liart-iota.vercel.app/',
-    'https://lista-de-compras-git-feat-integrated-main-ramontaffas-projects.vercel.app'
+    'https://lista-de-compras-git-feat-integrated-main-ramontaffas-projects.vercel.app',
+    'https://vercel.com/ramontaffarelcesars-projects/lista-de-compras-integrada/drbtxQhbndKA8RbrYC5baUUcwJdd'
   ]
 }));
 
